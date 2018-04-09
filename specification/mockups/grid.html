@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            position: relative;
+        }
+        #grid {
+            width: 800px;
+            height: 480px;
+            border: 20px solid;
+            border-image: url("bricks.png") 100 repeat;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 0;
+            background-image: url("floor.png");
+        }
+        .cell {
+            margin: 0;
+            padding: 0;
+            width: 78px;
+            height: 78px;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+        img {
+            max-width: 79px;
+            max-height: 79px;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+    </div>
+
+    <script>
+        let grid = document.getElementById('grid');
+
+        for (let i = 0; i < 60; i++) {
+            const row = (Math.floor(i/10));
+            const col = i % 10;
+            grid.innerHTML += `<div class="cell" data-row="${row}" data-col="${col}"></div>`;
+        }
+
+        let heroCell = getCell(3, 3);
+        heroCell.innerHTML = insertImage('hero.png');
+
+        let redGateCell = getCell(2, 9);
+        redGateCell.innerHTML = insertImage('gate.png');
+
+        let greenGateCell = getCell(5, 0);
+        greenGateCell.innerHTML = insertImage('green-gate.png');
+
+        let treasure1 = getCell(4, 6);
+        treasure1.innerHTML = insertImage('treasure.png');
+
+        let treasure2 = getCell(1, 1);
+        treasure2.innerHTML = insertImage('treasure.png');
+
+        function insertImage (url){
+            return `<img src="${url}" />`;
+        }
+        function getCell(row, col) {
+            return document.querySelector(`div[data-col="${col}"][data-row="${row}"]`);
+        }
+    </script>
+</body>
+</html>
