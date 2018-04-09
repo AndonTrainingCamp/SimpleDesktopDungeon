@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            position: relative;
+        }
+        #grid {
+            width: 800px;
+            height: 480px;
+            border: 20px solid;
+            border-image: url("bricks.png") 100 repeat;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 0;
+            background-image: url("floor.png");
+        }
+        table {
+            border-collapse: collapse;
+        }
+        .cell {
+            border: 1px solid #eee;
+        }
+        #hero {
+            width: 478px;
+            height: 478px;
+        }
+        .enemy {
+            width: 158px;
+            height: 239px;
+        }
+        img {
+            max-width: 158px;
+            max-height: 239px;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <table>
+            <tr>
+                <td id="hero" class="cell" rowspan="2"></td>
+                <td class="enemy cell" data-index="1">
+                    <img src="zombie.png">
+                </td>
+                <td class="enemy cell" data-index="3">
+                    <img src="zombie.png">
+                </td>
+            </tr>
+            <tr>
+                <td class="enemy cell" data-index="2">
+                    <img src="zombie.png">
+                </td>
+                <td class="enemy cell" data-index="4">
+                    <img src="zombie.png">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let heroCell = document.getElementById('hero');
+        heroCell.innerHTML = insertImage('hero.png');
+
+
+        function insertImage (url){
+            return `<img src="${url}" />`;
+        }
+    </script>
+</body>
+</html>
