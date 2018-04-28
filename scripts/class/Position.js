@@ -1,8 +1,8 @@
 class Position {
-    constructor (x, y) {
+    constructor (x = 0, y = 0) {
         //TODO check validity first
-        this.x = x || 0;
-        this.y = y || 0;
+        this.x = x;
+        this.y = y;
     }
 
     move (direction) { // one of 'up', 'down', 'left', 'right'

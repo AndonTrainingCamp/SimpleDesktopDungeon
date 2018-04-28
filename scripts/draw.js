@@ -12,7 +12,7 @@ const Draw = (function (ctx) {
 
 
     return {
-        clearGameBoard: clearGameBoard,
-        drawBorder: drawBorder
+        clearGameBoard,
+        drawBorder
     }
 })(ctx);
