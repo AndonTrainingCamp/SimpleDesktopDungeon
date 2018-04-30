@@ -5,6 +5,20 @@ class Hero {
     */
     constructor(level){
         //TODO generate initial hero/random monster with random stats
+        this.name = '';
+        this.experience = 0;
+        this.level = level;
+        this.stats = new Stats();
+        this.avatar = ''; //URI to hero image
+        this.position = new Position();
+        this.gear = {
+            left: new Item(),
+            right: new Item(),
+            chest: new Item(),
+            head: new Item()
+        };
+        this.carry = new Array(4); // Item
+        this.potions = new Array(1); // Potion
     }
 
     levelUp(){
