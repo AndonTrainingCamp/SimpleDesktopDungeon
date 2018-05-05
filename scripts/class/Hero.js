@@ -3,13 +3,13 @@ class Hero {
     * generates a random hero
     * @param {number} level - used to initiate monsters
     */
-    constructor(level){
+    constructor(hero){
         //TODO generate initial hero/random monster with random stats
-        this.name = '';
+        this.name = hero.name || this.randomName();
         this.experience = 0;
-        this.level = level;
+        this.level = hero.level || 1;
         this.stats = new Stats();
-        this.avatar = ''; //URI to hero image
+        this.avatar = new URL(''); //URI to hero image
         this.position = new Position();
         this.gear = {
             left: new Item(),
@@ -17,8 +17,8 @@ class Hero {
             chest: new Item(),
             head: new Item()
         };
-        this.carry = new Array(4); // Item
-        this.potions = new Array(1); // Potion
+        this.carry = []; // Item
+        this.potions = []; // Potion
     }
 
     levelUp(){
@@ -40,5 +40,13 @@ class Hero {
     */
     setGear(item){
         // TODO implement
+    }
+
+    randomName() {
+        const fname = ['Monstrous', 'Magnificent', 'All Mighty', 'Bloodthirsty'];
+        const lname = ['Cucumber', 'Pineapple', 'Melon', 'Avocado'];
+        const firstNameIndex = Math.floor(Math.random() * fname.length);
+        const lastNameIndex = Math.floor(Math.random() * lname.length);
+        return fname[firstNameIndex] + ' ' + lname[lastNameIndex];
     }
 }
