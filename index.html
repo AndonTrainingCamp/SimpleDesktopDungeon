@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
     <title>SIMPLE DESKTOP DUNGEON</title>
 </head>
 <body>
+    <div class="section">
+        <canvas id="gameBoard" width="600" height="360"></canvas>
 
-    <canvas id="gameBoard" width="600" height="360"></canvas>
+        <div id="heroBar">
+            <div id="gear">TODO Gear boxes placeholder</div>
+            <div id="carry">TODO backpack placeholder</div>
+            <div id="stats">TODO stats placeholder</div>
+        </div>
+        <div id="logger">
+            <p>example line 1</p>
+            <p>example line 2</p>
+            <p>example line 3</p>
+            <p>example line 4</p>
+            <p>very long line with long wordssssssssssssssss</p>
+            <p>example line 5</p>
+            <p>example line 6</p>
+            <p>example line 7</p>
+            <p>example line 8</p>
+            <p>example line 9</p>
+            <p>example line 10</p>
+            <p>example line 11</p>
+        </div>
+    </div>
+
+
+    <!-- libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
 
     <!-- game environment variables -->
     <script src="./scripts/environment.js"></script>
